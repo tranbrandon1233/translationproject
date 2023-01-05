@@ -688,12 +688,12 @@ class App extends Component {
           <t><br/>
             <b>Meaning: </b>{defs[this.state.index]}
           </t>
-          <t><br></br><br></br>
+          <t><br/><br/>
             <b>Synomyms: </b>{syn[this.state.index]}
           </t>
-          <t><br></br><br></br>
+          <t><br/><br/>
             <b>Antonyms/hints: </b>{hints[this.state.index]}
-          </t><br/>
+          </t><br/><br/>
         </div>
         <div id="test" style={{display: this.state.showTest ? 'block': 'none' }}>
           <br/>
