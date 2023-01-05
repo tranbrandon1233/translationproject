@@ -686,13 +686,13 @@ class App extends Component {
         </div>
         <div id="wordDef" style={{display: this.state.showDef ? 'block': 'none' }}>
           <t>
-            <b><ul>Meaning: </ul></b>{defs[this.state.index]}
+            <b>Meaning: </b>{defs[this.state.index]}
           </t>
           <t>
-            <b><ul>Synomyms: </ul></b>{syn[this.state.index]}
+            <b>Synomyms: </b>{syn[this.state.index]}
           </t>
           <t>
-            <b><ul>Antonyms/hints: </ul></b>{hints[this.state.index]}
+            <b>Antonyms/hints: </b>{hints[this.state.index]}
           </t>
         </div>
         <div id="test" style={{display: this.state.showTest ? 'block': 'none' }}>
