@@ -670,10 +670,10 @@ class App extends Component {
           <div><b> Congratulations! </b></div>
         </div>
       <div style={{display: this.state.showCorrect ? 'block': 'none' }} id="correctSelected" class="correctAns">
-          <t>That's correct!</t><br/>
+          <t>That's correct!</t><br/><br/>
         </div>
         <div style={{display: this.state.showWrong ? 'block': 'none' }} id="wrongSelected" class="wrongAns">
-          <t>Sorry, that's not correct.</t><br/>
+          <t>Sorry, that's not correct.</t><br/><br/>
         </div>
           <div style={{display: this.state.showWords ? 'block': 'none' }}>
             <t>{words[this.state.index]}</t><br/>
