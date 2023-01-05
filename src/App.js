@@ -560,7 +560,7 @@ class App extends Component {
     this.setState({
       selectedOption: changeEvent.target.value
     });
-    if(Number(changeEvent.target.value) === Number(this.state.index)){
+    if(Number(changeEvent.target.value) === Number(this.state.index) || Number(changeEvent.target.className) === Number(this.state.index)){
       this.setState({showCorrect: true});
       this.setState({showNext: true});
       this.setState({showDef: false});
@@ -697,10 +697,10 @@ class App extends Component {
         </div>
         <div id="test" style={{display: this.state.showTest ? 'block': 'none' }}>
           <br/>
-          <input type="radio" value ={randNums[0]} checked={this.state.selectedOption === randNums[0]} class="options" onChange={this.handleOptionChange} /><label>{syn[randNums[0]]}</label><br/>
-          <input type="radio"  value ={randNums[1]} checked={this.state.selectedOption === randNums[1]}  class="options" onChange={this.handleOptionChange}/><label>{syn[randNums[1]]}</label><br/>
-          <input type="radio" value = {randNums[2]} checked={this.state.selectedOption === randNums[2]} class="options" onChange={this.handleOptionChange}/><label>{syn[randNums[2]]}</label><br/>
-          <input type="radio"  value ={randNums[3]} checked={this.state.selectedOption === randNums[3]} class="options" onChange={this.handleOptionChange}/><label>{syn[randNums[3]]}</label><br/>
+          <input type="radio" value ={randNums[0]} checked={this.state.selectedOption === randNums[0]} class="options" onChange={this.handleOptionChange} /><t className={randNums[0]} onClick={this.handleOptionChange} >{syn[randNums[0]]}</t><br/>
+          <input type="radio"  value ={randNums[1]} checked={this.state.selectedOption === randNums[1]}  class="options" onChange={this.handleOptionChange}/><label className={randNums[1]} onClick={this.handleOptionChange} >{syn[randNums[1]]}</label><br/>
+          <input type="radio" value = {randNums[2]} checked={this.state.selectedOption === randNums[2]} class="options" onChange={this.handleOptionChange}/><label className={randNums[2]} onClick={this.handleOptionChange} >{syn[randNums[2]]}</label><br/>
+          <input type="radio"  value ={randNums[3]} checked={this.state.selectedOption === randNums[3]} class="options" onChange={this.handleOptionChange}/><label className={randNums[3]} onClick={this.handleOptionChange} >{syn[randNums[3]]}</label><br/>
         </div>
         <div style={{display: this.state.showNext ? 'block': 'none' }} id='nextBtn'>
           <button onClick={this.next}>Next</button>
