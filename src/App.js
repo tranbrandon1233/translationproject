@@ -685,7 +685,7 @@ class App extends Component {
           <button onClick={this.defineWord} id='notUnderstandBtn' style={{display: this.state.showNotUnderstandButton ? 'block': 'none' }}>I do not understand</button>
         </div>
         <div id="wordDef" style={{display: this.state.showDef ? 'block': 'none' }}>
-          <t><br/>
+          <t>
             <b>Meaning: </b>{defs[this.state.index]}
           </t>
           <t><br/><br/>
