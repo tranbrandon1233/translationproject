@@ -685,13 +685,13 @@ class App extends Component {
           <button onClick={this.defineWord} id='notUnderstandBtn' style={{display: this.state.showNotUnderstandButton ? 'block': 'none' }}>I do not understand</button>
         </div>
         <div id="wordDef" style={{display: this.state.showDef ? 'block': 'none' }}>
-          <t><br></br>
+          <t><br></br><br></br>
             <b>Meaning: </b>{defs[this.state.index]}
           </t>
-          <t><br></br>
+          <t><br></br><br></br>
             <b>Synomyms: </b>{syn[this.state.index]}
           </t>
-          <t><br></br>
+          <t><br></br><br></br>
             <b>Antonyms/hints: </b>{hints[this.state.index]}
           </t>
         </div>
