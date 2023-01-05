@@ -603,7 +603,7 @@ class App extends Component {
         firstTime = false;
       }
       else{  //If not, assign random definition to randNums if it is not equal to the index
-        while(newNum === this.state.index || randNums.some(num => num === newNum) ){ //Change newNum until it is no longer the same as the index or is in randNums already
+        while(newNum === this.state.index || randNums.some(num => num === newNum) || newNum > words.length-1){ //Change newNum until it is no longer the same as the index or is in randNums already
           newNum = Math.floor(Math.random()*(words.length-1));
         }
         randNums[i] = newNum;
