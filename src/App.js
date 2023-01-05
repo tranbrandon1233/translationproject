@@ -670,10 +670,10 @@ class App extends Component {
           <div><b> Congratulations! </b></div>
         </div>
       <div style={{display: this.state.showCorrect ? 'block': 'none' }} id="correctSelected" class="correctAns">
-          <t>That's correct!</t><br/><br/>
+          <t>That's correct!</t>
         </div>
         <div style={{display: this.state.showWrong ? 'block': 'none' }} id="wrongSelected" class="wrongAns">
-          <t>Sorry, that's not correct.</t><br/><br/>
+          <t>Sorry, that's not correct.</t>
         </div>
           <div style={{display: this.state.showWords ? 'block': 'none' }}>
             <t>{words[this.state.index]}</t><br/>
@@ -685,7 +685,7 @@ class App extends Component {
           <button onClick={this.defineWord} id='notUnderstandBtn' style={{display: this.state.showNotUnderstandButton ? 'block': 'none' }}>I do not understand</button>
         </div>
         <div id="wordDef" style={{display: this.state.showDef ? 'block': 'none' }}>
-          <t><br></br>
+          <t><br></br><br/>
             <b>Meaning: </b>{defs[this.state.index]}
           </t>
           <t><br></br><br></br>
