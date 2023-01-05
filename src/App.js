@@ -578,7 +578,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      index: 0,
+      index: Math.floor(Math.random()*words.length-1),
       showWords: true,
       showNext: false,
       showCorrect: false,
@@ -610,9 +610,6 @@ class App extends Component {
     }
     let indexUsed = false;  //Checks if index was ever inserted into randNums
     for(let i = 0; i < randNums.length; i++){
-      let newNum = Math.floor(Math.random()*words.length);
-     
-      randNums[i] = newNum;
       if(randNums[i] === this.state.index){
         indexUsed = true;  //If so, return true
       }
