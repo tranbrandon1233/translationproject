@@ -451,7 +451,7 @@ class App extends Component {
     this.setState({
       selectedOption: changeEvent.target.value
     });
-    if(Number(changeEvent.target.value) == Number(this.state.index)){
+    if(Number(changeEvent.target.value) === Number(this.state.index)){
       this.setState({showCorrect: true});
       this.setState({showNext: true});
       this.setState({showDef: false});
