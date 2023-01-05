@@ -676,7 +676,7 @@ class App extends Component {
           <t>Sorry, that's not correct.</t>
         </div>
           <div style={{display: this.state.showWords ? 'block': 'none' }}>
-            <t>{words[this.state.index]}</t><br/>
+            <br/><t>{words[this.state.index]}</t><br/>
             <t>{type[this.state.index]}</t>
           </div>
           <br/>
@@ -685,7 +685,7 @@ class App extends Component {
           <button onClick={this.defineWord} id='notUnderstandBtn' style={{display: this.state.showNotUnderstandButton ? 'block': 'none' }}>I do not understand</button>
         </div>
         <div id="wordDef" style={{display: this.state.showDef ? 'block': 'none' }}>
-          <t><br></br><br/>
+          <t><br/>
             <b>Meaning: </b>{defs[this.state.index]}
           </t>
           <t><br></br><br></br>
