@@ -692,8 +692,8 @@ class App extends Component {
             <b>Synomyms: </b>{syn[this.state.index]}
           </t>
           <t><br></br><br></br>
-            <b>Antonyms/hints: </b>{hints[this.state.index]}<br/>
-          </t>
+            <b>Antonyms/hints: </b>{hints[this.state.index]}
+          </t><br/>
         </div>
         <div id="test" style={{display: this.state.showTest ? 'block': 'none' }}>
           <input type="radio" value ={randNums[0]} checked={this.state.selectedOption === randNums[0]} class="options" onChange={this.handleOptionChange} /><label>{syn[randNums[0]]}</label><br/>
