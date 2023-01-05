@@ -553,7 +553,8 @@ const hints = [ "audio (sound only)",
 "ant. -give up, neglect",
 "ant. -unconcern,  be irrelevant",
 "ant. -begin, start, initiate"]
-let randNums = [0,0,0,0]
+let randNums = [0,0,0,0];
+let usedNums = [];
 
 class App extends Component {
    handleOptionChange = changeEvent => {
@@ -578,7 +579,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      index: Math.floor(Math.random()*words.length-1),
+      index: Math.floor(Math.random()*(words.length-1)),
       showWords: true,
       showNext: false,
       showCorrect: false,
@@ -603,7 +604,7 @@ class App extends Component {
       }
       else{  //If not, assign random definition to randNums if it is not equal to the index
         while(newNum === this.state.index){ //Change newNum until it is no longer the same as the index or is in randNums already
-          newNum = Math.floor(Math.random()*words.length-1);
+          newNum = Math.floor(Math.random()*(words.length-1));
         }
         randNums[i] = newNum;
       }
@@ -634,8 +635,11 @@ class App extends Component {
     
   }
    next= () => {
-    if(this.state.index < words.length-1){
-      this.setState({index:this.state.index+1});
+      let randomIndex = Math.floor(Math.random()*(words.length-1));  //Pick a random index
+      while(usedNums.some(num => num === randomIndex) && usedNums.length !== words.length){   //If it was already used and not all the words were used yet, reselect
+        randomIndex = Math.floor(Math.random()*(words.length-1));
+      }
+      
       this.setState({showWrong: false});
       this.setState({showCorrect: false});
       this.setState({showNext: false});
@@ -643,8 +647,9 @@ class App extends Component {
       this.setState({showUnderstandButton: true});
       this.setState({showDef: false});
       this.setState({selectedOption:-1});
-    }
-    else{
+      this.setState({index:randomIndex});
+      usedNums.append(...this.state.index);
+    if(usedNums.length === words.length){
       this.setState({showComplete: true});
       this.setState({showWrong: false});
       this.setState({showCorrect: false});
