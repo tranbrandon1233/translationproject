@@ -12,10 +12,15 @@ code {
     monospace;
 }
 
-.btnContainer{
-  width: 250px;
-  display: inline-grid;
+.btn{
+  width: 150px;
+  float: left;
+}
 
+.btnContainer{
+  display: flex;
+  flex-direction: row;
+  column-gap: 2rem;
 }
 
 .wrongAns{
@@ -25,3 +30,4 @@ code {
 .correctAns{
   background-color: green;
 }
+
