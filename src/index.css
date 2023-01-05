@@ -11,10 +11,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
 .btnContainer{
-  width: fit-content;
+  width: 250px;
+  display: inline-grid;
+
 }
 
-div{
-  width: fit-content;
+.wrongAns{
+  background-color: red;
+}
+
+.correctAns{
+  background-color: green;
 }
