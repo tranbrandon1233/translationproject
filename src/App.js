@@ -696,6 +696,7 @@ class App extends Component {
           </t><br/>
         </div>
         <div id="test" style={{display: this.state.showTest ? 'block': 'none' }}>
+          <br/>
           <input type="radio" value ={randNums[0]} checked={this.state.selectedOption === randNums[0]} class="options" onChange={this.handleOptionChange} /><label>{syn[randNums[0]]}</label><br/>
           <input type="radio"  value ={randNums[1]} checked={this.state.selectedOption === randNums[1]}  class="options" onChange={this.handleOptionChange}/><label>{syn[randNums[1]]}</label><br/>
           <input type="radio" value = {randNums[2]} checked={this.state.selectedOption === randNums[2]} class="options" onChange={this.handleOptionChange}/><label>{syn[randNums[2]]}</label><br/>
