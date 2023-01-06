@@ -13,15 +13,22 @@ code {
 }
 
 .btn{
-  width: 150px;
+  width: 100px;
   float: left;
 }
 
+.wordDef{
+  flex-wrap: wrap;
+  align-content:flex-start;
+  text-align: start;
+  float: left;
+}
 .btnContainer{
   display: flex;
   flex-direction: row;
   column-gap: 2rem;
 }
+
 
 .wrongAns{
   background-color: red;
@@ -30,4 +37,21 @@ code {
 .correctAns{
   background-color: green;
 }
+
+.word{
+  font-size: xx-large;
+}
+
+.test input{  
+  content: '';
+  border-radius: 50%;
+  border: 1px solid rgb(0, 0, 0);
+  background-color: #282c34;
+}
+
+/* END CHECKBOX STYLE */
+
+
+
+
 

@@ -1,4 +1,5 @@
 import './App.css';
+import './index.css';
 import React, {Component} from 'react';
 
 <head>
@@ -442,7 +443,116 @@ const syn = [ "television images, record, movie",
 "perform, reach, fulfill, realize",
 "carry on, undertake, direct, guide",
 "involve, deal with, pertain" ]
-const examples = ["The scoundrel drifted from town to town to avoid getting caught.","The obstinate child would not share his toys.", "We bought a video camera last week.", "The ant made contact with the food.", "g", "h"]
+const examples = ["We bought a video camera last week.",
+"The ant made contact with the food.",
+"The just man listened to all of our stories before making a decision.",
+"Make a list of all the things you have to do.",
+"The previous owners of the house had painted it hot pink.",
+"Many diplomats attended the worldwide forum.",
+"They are using new technology to produce medicine.",
+"The shoes with the color he wanted was not available.",
+"The source of wealth for this country is their diamond industry.",
+"His project was approved by the committee.",
+"She drew an image of her dog to stick onto her refrigerator.",
+"The content of the box is unknown.",
+"Oliver holds title to his family estate.",
+"We tabled the issue for future consideration, and turned our attention to something new.",
+"The cows on the hill started lowing.",
+"The complete puzzle will show a picture of a peaceful lake.",
+"His request for money was not granted.",
+"I was browsing through a magazine when I spotted your name.",
+"We were all hoping that they would reduce the rent at least a little.",
+"The airline log confirmed her alibi.",
+"The weather became warmer in March.",
+"She created a painting for her art class.",
+"The method was simple, but remarkably effective.",
+"The hostages were released after the ransom was paid.",
+"This material is too slippery to step on.",
+"A spring has the ability to spring out once it is released.",
+"He weathered the changes in his personal life without telling anyone.",
+"New modes in pop culture happened throughout the century.",
+"The recent arrival of our grandparents has caused our mother to pay less attention to us.",
+"He submitted his rough draft to his editor",
+"She manually fixed her garage door.",
+"This object has no practical function and is purely for decoration.",
+"Can you find me some string to tie up this package?",
+"He can speak several foreign languages.",
+"The tour of Europe took us through many countries.",
+"He complained that his annual salary was lower than his friend's.",
+"He is very active in the club because he is its president.",
+"She practices the piano daily to improve her skill.",
+"Her store profits increased after she began advertising on TV.",
+"She discounted all the money she had spent to see how much she had left.",
+"The boy's master ordered him to collect firewood.",
+"The burglar gained entry into the house through the patio doors.",
+"The capital of Arizona is Phoenix.",
+"We could not fit the dresser into the house because of its volume.",
+"United States is a republic country.",
+"I read the entire book in one day.",
+"She is a virtual professional tennis player.",
+"He was completely frank with her about what happened.",
+"She approached the strange-looking object cautiously.",
+"The violent impact of the car crash injured both drivers.",
+"She developed a love for mystery novels as she grew older.",
+"He considered his job options carefully.",
+"We only wanted to ensure that our money would be safe.",
+"The host of ants crawled all over the spilled food.",
+"Her natural musical ability helped her become a famous pianist.",
+"His contract of employment specifies that he must receive at least one month's training.",
+"They disagreed on how to define 'dangerous'.",
+"The visual elements of the play are very important.",
+"My initial job was in the lush rainforests of Central Africa.",
+"We coupled with another group to travel in the region together.",
+"People are more concerned about the domestic issue such as tax cut than foreign affairs.",
+"The model's New Year's resolution was to exercise more.",
+"Their traditional costumes were absolutely stunning.",
+"On the surface, he appeared calm and ready.",
+"The starfish has several complex bodily systems to help it survive.",
+"They benefited from regular music lessons.",
+"The economy of her words makes her a good speaker.",
+"They made good progress as they crossed the prairie.",
+"They have to make many revisions of the novel before printing it.",
+"It is optional to wear formal clothing to the party.",
+"Daniel's notes were filled with random doodles.",
+"I'm sorry, I've forgotten your name.",
+"He separated the clothes into light and dark piles.",
+"Ian recommended a great restaurant to us when we were in town.",
+"Mike had the capacity to handle several jobs at once.",
+"The balcony provided a vista of the harbor.",
+"He ended the childhood phase of his life at age 13.",
+"He had never been to the opera until last night.",
+"The playwright decided to delete the last scene because it contained nothing new.",
+"It is essential that we all finish our homework.",
+"He made a valid point which we had to consider.",
+"The State has legislation governing minimum wage rates.",
+"Doctors believe she has a rare form of the deadly virus in her body.",
+"He provides some reliable information.",
+"He is one of the most consistent players on the tennis team.",
+"She had often come into conflict with her sister.",
+"She is very mature for her age and handled the situation well.",
+"A lack of proper vitamins and minerals can lead to serious health problems.",
+"She obtained the gold medal through long, hard work.",
+"The country launched its first satellite into space.",
+"The lion is a symbol of bravery.",
+"There is a universal need for food, water and shelter.",
+"We crossed the river at its ford.",
+"This college is the best institution of its kind.",
+"The surgeon successfully performed the operation.",
+"In an instant, he jumped up and grabbed the ball.",
+"The owner was quite angry with her, since she was 4 months behind on her rent.",
+"Problems may arise if the two men cannot speak the same language.",
+"The columns held up nothing, as they were added only for visual effect.",
+"There will be a municipal election next month.",
+"She studied psychology to learn more about human behavior.",
+"The depth at which the fish live in makes it hard to study them.",
+"You should reserve some dry vegetable for winter season.",
+"The law applies to all European countries; Britain is no exception.",
+"The interior of this house is very lovely.",
+"I attempted to finish the novel in one afternoon.",
+"He wants to achieve success by becoming president of his club.",
+"The company conducted a survey among its employees.",
+"This problem concerns you and your parents.",
+"She finished all her chores before going out to play."]
 const hints = [ "audio (sound only)",
 "ant. -depart, leave",
 "also adv. - exactly , only",
@@ -555,6 +665,8 @@ const hints = [ "audio (sound only)",
 "ant. -begin, start, initiate"]
 let randNums = [0,0,0,0];
 let usedNums = [];
+let firstHalf,secondHalf,insertIndex, additionalTxt; 
+let indexPlusExtra = 0;
 
 class App extends Component {
    handleOptionChange = changeEvent => {
@@ -567,13 +679,18 @@ class App extends Component {
       this.setState({showDef: false});
       this.setState({showNotUnderstandButton: false});
       this.setState({showTest: false}); 
+      this.setState({showNotUnderstandButton2: false});
     }
     else{
       this.setState({showWrong: true});
       this.setState({showNext: true});
       this.setState({showDef: true});
+      this.findExample()
+      this.findAdditionaltxt();
       this.setState({showNotUnderstandButton: false});
       this.setState({showTest: false}); 
+      this.setState({showNotUnderstandButton2: false});
+
     }
   };
   constructor(props) {
@@ -589,49 +706,69 @@ class App extends Component {
       showTest: false,
       showWrong: false,
       showComplete: false,
-      selectedOption: -1
+      selectedOption: -1,
+      showNotUnderstandButton2: false,
+      whiteTxt: ""
     };
   }
-  
+
+  findAdditionaltxt =()=>{
+    if(hints[this.state.index] === ""){
+      additionalTxt = "N/A"
+    }
+    else{
+      additionalTxt = hints[this.state.index];
+    }
+  }
+  findExample =() =>{
+    insertIndex = examples[this.state.index].search(words[this.state.index]) //Find word in sentence
+    indexPlusExtra = insertIndex;
+    if(insertIndex < examples[this.state.index].length-1){
+      while(examples[this.state.index][indexPlusExtra+words[this.state.index].length] !== " "){   //Get complete word before next space if not at end of sentence
+        indexPlusExtra++;
+      }
+    }
+
+    switch(words[this.state.index]){  //Exceptions for irregular verbs
+      case "become":
+        insertIndex = examples[this.state.index].search("became")
+        break;
+      default:
+        break;
+    }
+    firstHalf= examples[this.state.index].substring(0,insertIndex) //Sentence before word
+    secondHalf = examples[this.state.index].substring(indexPlusExtra+words[this.state.index].length,examples[this.state.index].length) //Sentence after word
+
+  }
   //Function to select random definitions for the quiz
   createNums = () =>{
-    let firstTime = true;  //Ensures index is chosen only once
+    randNums = [0,0,0,0] //Reset randNums
     for(let i = 0; i < randNums.length; i++){  //Loops for all of randNums
       let newNum = Math.floor(Math.random()*words.length);  //Selects a random number
-      if(Math.random() < 0.25 && firstTime){  //1 in 4 chance of the index being selected
-        randNums[i] = this.state.index;
-        firstTime = false;
-      }
-      else{  //If not, assign random definition to randNums if it is not equal to the index
         while(newNum === this.state.index || randNums.some(num => num === newNum) || newNum > words.length-1){ //Change newNum until it is no longer the same as the index or is in randNums already
-          newNum = Math.floor(Math.random()*(words.length-1));
+          newNum = Math.floor(Math.random()*(words.length));
         }
         randNums[i] = newNum;
       }
-    }
-    let indexUsed = false;  //Checks if index was ever inserted into randNums
-    for(let i = 0; i < randNums.length; i++){
-      if(randNums[i] === this.state.index){
-        indexUsed = true;  //If so, return true
-      }
-    }
-    if(!indexUsed){  //If index is never used,
       randNums[Math.floor(Math.random()*4)] = this.state.index; //Assign index to random element in randNums
-    }
 }
    defineWord= () => {
+    this.findExample()
+    this.findAdditionaltxt();
     this.setState({showUnderstandButton: false});
     this.setState({showNotUnderstandButton: false});
     this.setState({showDef: true});
     this.setState({showTest: false});
     this.setState({showNext: true});
+    this.setState({showNotUnderstandButton2: false});
 
   }
   test= () => {    
     this.createNums(); //Randomize randNums again
     this.setState({showTest: true});
-    this.setState({showNotUnderstandButton: true});
+    this.setState({showNotUnderstandButton: false});
     this.setState({showUnderstandButton: false});
+    this.setState({showNotUnderstandButton2: true});
     
   }
    next= () => {
@@ -678,32 +815,40 @@ class App extends Component {
           <t>Sorry, that's not correct.</t>
         </div>
           <div style={{display: this.state.showWords ? 'block': 'none' }}>
-            <br/><t>{words[this.state.index]}</t><br/>
+            <br/><t class="word" style={{fontSize:"30pt"}}>{words[this.state.index]}</t><br/>
             <t>{type[this.state.index]}</t>
           </div>
           <br/>
           <div class='btnContainer'>
-            <button class="btn" onClick={this.test} id="understandBtn" style={{display: this.state.showUnderstandButton ? 'block': 'none' }} >I understand</button>
-            <button class="btn" onClick={this.defineWord} id='notUnderstandBtn' style={{display: this.state.showNotUnderstandButton ? 'block': 'none'}}>I do not understand</button>
+            <button class="btn" onClick={this.test} id="understandBtn" style={{display: this.state.showUnderstandButton ? 'block': 'none' }} >Known</button>
+            <button class="btn" onClick={this.defineWord} id='notUnderstandBtn' style={{display: this.state.showNotUnderstandButton ? 'block': 'none'}}>Unknown</button>
           </div>
-        <div id="wordDef" style={{display: this.state.showDef ? 'block': 'none' }}>
-          <t>
-            <b>Meaning: </b>{defs[this.state.index]}
+        <div id="wordDef" class="wordDef" style={{display: this.state.showDef ? 'block': 'none'}}>
+          <t style={{color:'yellow'}}>
+            <b><u>MEANING:</u></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<t class="defInfo">{defs[this.state.index]}</t>
           </t>
-          <t><br/><br/>
-            <b>Synomyms: </b>{syn[this.state.index]}
+          <t style={{color:'magenta'}}><br/><br/>
+            <b><u>SYNONYMS:</u></b>&nbsp;&nbsp;&nbsp;&nbsp;<t class="defInfo">{syn[this.state.index]}</t>
           </t>
-          <t><br/><br/>
-            <b>Antonyms/hints: </b>{hints[this.state.index]}
+          <t style={{color:'cyan'}}><br/><br/>
+            <b><u>EXAMPLE:</u></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{firstHalf}<t class="defInfo" style={{color:"white"}}>{examples[this.state.index].substring(insertIndex,indexPlusExtra+words[this.state.index].length)}</t>{secondHalf}
+          </t>
+          <t style={{color:'greenyellow'}}><br/><br/>
+            <b><u>Additional:</u></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<t class="defInfo">{additionalTxt}</t>
           </t><br/><br/>
         </div>
-        <div id="test" style={{display: this.state.showTest ? 'block': 'none' }}>
+        <div style={{display: this.state.showTest ? 'block': 'none', textAlign:'left' }}>
+          <t style={{color:"blanchedalmond"}}><b>Synonym:</b></t><br/><br/>
+          <label class="test" className={randNums[0]} onClick={this.handleOptionChange} ><input class="test" type="radio" value ={randNums[0]} checked={this.state.selectedOption === randNums[0]} onChange={this.handleOptionChange} />&nbsp;&nbsp;&nbsp;&nbsp;{syn[randNums[0]]}</label><br/>
+          <input class="test" type="radio"  value ={randNums[1]} checked={this.state.selectedOption === randNums[1]}   onChange={this.handleOptionChange}/><label className={randNums[1]} onClick={this.handleOptionChange} >&nbsp;&nbsp;&nbsp;&nbsp;{syn[randNums[1]]}</label><br/>
+          <input class="test"  type="radio" value = {randNums[2]} checked={this.state.selectedOption === randNums[2]}  onChange={this.handleOptionChange}/><label className={randNums[2]} onClick={this.handleOptionChange} >&nbsp;&nbsp;&nbsp;&nbsp;{syn[randNums[2]]}</label><br/>
+          <label className={randNums[3]} onClick={this.handleOptionChange} ><input class="test" type="radio"  value ={randNums[3]} checked={this.state.selectedOption === randNums[3]}  onChange={this.handleOptionChange}/>&nbsp;&nbsp;&nbsp;&nbsp;{syn[randNums[3]]}</label><br/>
           <br/>
-          <input type="radio" value ={randNums[0]} checked={this.state.selectedOption === randNums[0]} class="options" onChange={this.handleOptionChange} /><t className={randNums[0]} onClick={this.handleOptionChange} >{syn[randNums[0]]}</t><br/>
-          <input type="radio"  value ={randNums[1]} checked={this.state.selectedOption === randNums[1]}  class="options" onChange={this.handleOptionChange}/><label className={randNums[1]} onClick={this.handleOptionChange} >{syn[randNums[1]]}</label><br/>
-          <input type="radio" value = {randNums[2]} checked={this.state.selectedOption === randNums[2]} class="options" onChange={this.handleOptionChange}/><label className={randNums[2]} onClick={this.handleOptionChange} >{syn[randNums[2]]}</label><br/>
-          <input type="radio"  value ={randNums[3]} checked={this.state.selectedOption === randNums[3]} class="options" onChange={this.handleOptionChange}/><label className={randNums[3]} onClick={this.handleOptionChange} >{syn[randNums[3]]}</label><br/>
         </div>
+        <div class='btnContainer' id='notUnderstandBtn2'>
+          
+            <button class="btn" onClick={this.defineWord}  style={{display: this.state.showNotUnderstandButton2 ? 'block': 'none'}}>Unknown</button>
+          </div>
         <div style={{display: this.state.showNext ? 'block': 'none' }} id='nextBtn'>
           <button onClick={this.next}>Next</button>
         </div>
