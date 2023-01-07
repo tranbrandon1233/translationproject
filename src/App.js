@@ -846,7 +846,7 @@ class App extends Component {
           </t>
           <t style={{color:'greenyellow'}}><br/><br/>
             <b><u>Additional:</u></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<t class="defInfo">{additionalTxt}</t>
-          </t><br/>
+          </t><br/><br/><br/>
         </div>
         <div style={{display: this.state.showTest ? 'block': 'none', textAlign:'left' }}>
           <t style={{color:"blanchedalmond"}}><b>Synonym:</b></t><br/><br/>
