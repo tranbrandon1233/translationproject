@@ -18,10 +18,10 @@ code {
 }
 
 .wordDef{
-  flex-wrap: wrap;
-  align-content:flex-start;
-  text-align: start;
+  padding: 2rem;
+  text-align: left;
   float: left;
+  align-content: center;
 }
 .btnContainer{
   display: flex;
@@ -40,11 +40,11 @@ code {
 
 .word{
   font-size: xx-large;
-  color: rgb(128,128,255);
+  color: rgb(255,255,255);
 }
 
 .type{
-  color: rgb(255,135,15);
+  color: rgb(255,255,0);
 }
 
 .radio{  
@@ -55,6 +55,20 @@ code {
   padding-left: 100px;
 }
 
+@media (min-width: 1100px) {
+
+  }
+
+@media (max-width: 1100px) {
+  h1:after {
+    content: 'Medium screen';
+  }
+}
+@media (max-width: 480px) {
+  h1:after {
+    content: 'Small screen';
+  }
+}
 /* END CHECKBOX STYLE */
 
 

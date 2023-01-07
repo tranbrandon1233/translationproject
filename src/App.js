@@ -738,6 +738,9 @@ class App extends Component {
       case "browse":
         insertIndex = examples[this.state.index].indexOf("browsing")
         break;
+      case "forget":
+          insertIndex = examples[this.state.index].indexOf("forgotten")
+          break;
       default:
         break;
     }
@@ -833,8 +836,8 @@ class App extends Component {
           </div>
         <div id="wordDef" class="wordDef" style={{display: this.state.showDef ? 'block': 'none'}}>
           <t style={{color:'yellow'}}>
-            <b><u>MEANING:</u></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<t class="defInfo">{defs[this.state.index]}</t>
-          </t>
+            <b><u>MEANING:</u></b></t>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <t class="defInfo" style={{color:'yellow'}}>{defs[this.state.index]}</t>
           <t style={{color:'magenta'}}><br/><br/>
             <b><u>SYNONYMS:</u></b>&nbsp;&nbsp;&nbsp;&nbsp;<t class="defInfo">{syn[this.state.index]}</t>
           </t>
@@ -842,8 +845,8 @@ class App extends Component {
             <b><u>EXAMPLE:</u></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{firstHalf}<t class="defInfo" style={{color:"white"}}>{examples[this.state.index].substring(insertIndex,indexPlusExtra+words[this.state.index].length)}</t>{secondHalf}
           </t>
           <t style={{color:'greenyellow'}}><br/><br/>
-            <b><u>Additional:</u></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<t class="defInfo">{additionalTxt}</t>
-          </t><br/><br/>
+            <b><u>Additional:</u></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<t class="defInfo">{additionalTxt}</t>
+          </t><br/>
         </div>
         <div style={{display: this.state.showTest ? 'block': 'none', textAlign:'left' }}>
           <t style={{color:"blanchedalmond"}}><b>Synonym:</b></t><br/><br/>
