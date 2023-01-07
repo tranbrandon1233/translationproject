@@ -750,7 +750,7 @@ class App extends Component {
     randNums = ["a","a","a","a"] //Reset randNums
     for(let i = 0; i < randNums.length; i++){  //Loops for all of randNums
       let newNum = Math.floor(Math.random()*words.length);  //Selects a random number
-      while(typeof(randNums[i]) !=='number' || examples[randNums[i]].length < 2){  //Reassign if new elem is not a number
+      while(typeof(randNums[i]) !=='number' || syn[randNums[i]].length < 2){  //Reassign if new elem is not a number
         while((newNum === this.state.index || randNums.some(num => num === newNum) || newNum > words.length-1)){ //Change newNum until it is no longer the same as the index or is in randNums already
           newNum = Math.floor(Math.random()*(words.length));
         }
