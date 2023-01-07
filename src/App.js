@@ -814,6 +814,29 @@ class App extends Component {
     
     <div className="App">
       <header className="App-header">
+      <div style={{position:"relative", rotate:"-45deg", fontSize:"20pt"}}>
+        <div id="div1" style={{position:"absolute", top:-500, left:-400}}>      <t class="watermark">FastWayEDU</t><br class="watermark"/><br class="watermark"/></div>
+        <div id="div1" style={{position:"absolute", top:-300, left:-200}}>      <t class="watermark">FastWayEDU</t><br class="watermark"/><br class="watermark"/></div>
+        <div id="div1" style={{position:"absolute", top:-100, left:0}}>      <t class="watermark">FastWayEDU</t><br class="watermark"/><br class="watermark"/></div>
+        <div id="div1" style={{position:"absolute", top:100, left:200}}>      <t class="watermark">FastWayEDU</t><br class="watermark"/><br class="watermark"/></div>
+        <div id="div1" style={{position:"absolute", top:300, left:400}}>      <t class="watermark">FastWayEDU</t><br class="watermark"/><br class="watermark"/></div>
+        <div id="div1" style={{position:"absolute", top:200, left:100}}>      <t class="watermark">FastWayEDU</t><br class="watermark"/><br class="watermark"/></div>
+        <div id="div1" style={{position:"absolute", top:400, left:300}}>      <t class="watermark">FastWayEDU</t><br class="watermark"/><br class="watermark"/></div>
+        <div id="div1" style={{position:"absolute", top:0, left:-100}}>      <t class="watermark">FastWayEDU</t><br class="watermark"/><br class="watermark"/></div>
+        <div id="div1" style={{position:"absolute", top:-200, left:-300}}>      <t class="watermark">FastWayEDU</t><br class="watermark"/><br class="watermark"/></div>
+        <div id="div1" style={{position:"absolute", top:-400, left:-500}}>      <t class="watermark">FastWayEDU</t><br class="watermark"/><br class="watermark"/></div>
+        <div id="div1" style={{position:"absolute", top: 330, left:0}}>      <t class="watermark">FastWayEDU</t><br class="watermark"/><br class="watermark"/></div>
+        <div id="div1" style={{position:"absolute", top: 530, left:200}}>      <t class="watermark">FastWayEDU</t><br class="watermark"/><br class="watermark"/></div>
+        <div id="div1" style={{position:"absolute", top: 130, left:-200}}>      <t class="watermark">FastWayEDU</t><br class="watermark"/><br class="watermark"/></div>
+        <div id="div1" style={{position:"absolute", top: -100, left:-400}}>      <t class="watermark">FastWayEDU</t><br class="watermark"/><br class="watermark"/></div>
+        <div id="div1" style={{position:"absolute", top: -300, left:-600}}>      <t class="watermark">FastWayEDU</t><br class="watermark"/><br class="watermark"/></div>
+        <div id="div1" style={{position:"absolute", top: 250, left:-300}}>      <t class="watermark">FastWayEDU</t><br class="watermark"/><br class="watermark"/></div>
+        <div id="div1" style={{position:"absolute", top: 450, left:-100}}>      <t class="watermark">FastWayEDU</t><br class="watermark"/><br class="watermark"/></div>
+        <div id="div1" style={{position:"absolute", top: 650, left:100}}>      <t class="watermark">FastWayEDU</t><br class="watermark"/><br class="watermark"/></div>
+        <div id="div1" style={{position:"absolute", top: 50, left:-500}}>      <t class="watermark">FastWayEDU</t><br class="watermark"/><br class="watermark"/></div>
+        <div id="div1" style={{position:"absolute", top: -150, left:-700}}>      <t class="watermark">FastWayEDU</t><br class="watermark"/><br class="watermark"/></div>
+
+      </div>
         <div style={{display: this.state.showComplete ? 'block': 'none' }}>
           <div>You completed the program!</div>
           <br/>
