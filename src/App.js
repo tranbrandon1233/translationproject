@@ -663,10 +663,11 @@ const hints = [ "audio (sound only)",
 "ant. -give up, neglect",
 "ant. -unconcern,  be irrelevant",
 "ant. -begin, start, initiate"]
-let randNums = [0,0,0,0];
+let randNums = ["a","a","a","a"] 
 let usedNums = [];
 let firstHalf,secondHalf,insertIndex, additionalTxt; 
 let indexPlusExtra = 0;
+const charArray = [" ", ";", ".", ",", ":"]
 
 class App extends Component {
    handleOptionChange = changeEvent => {
@@ -725,14 +726,17 @@ class App extends Component {
     insertIndex = examples[this.state.index].search(words[this.state.index]) //Find word in sentence
     indexPlusExtra = insertIndex;
     if(insertIndex < examples[this.state.index].length-1){
-      while(examples[this.state.index][indexPlusExtra+words[this.state.index].length] !== " "){   //Get complete word before next space if not at end of sentence
+      while(!charArray.includes(examples[this.state.index][indexPlusExtra+words[this.state.index].length])){   //Get complete word before next space if not at end of sentence
         indexPlusExtra++;
       }
     }
 
     switch(words[this.state.index]){  //Exceptions for irregular verbs
       case "become":
-        insertIndex = examples[this.state.index].search("became")
+        insertIndex = examples[this.state.index].indexOf("became")
+        break;
+      case "browse":
+        insertIndex = examples[this.state.index].indexOf("browsing")
         break;
       default:
         break;
@@ -743,18 +747,14 @@ class App extends Component {
   }
   //Function to select random definitions for the quiz
   createNums = () =>{
-    randNums = [0,0,0,0] //Reset randNums
+    randNums = ["a","a","a","a"] //Reset randNums
     for(let i = 0; i < randNums.length; i++){  //Loops for all of randNums
       let newNum = Math.floor(Math.random()*words.length);  //Selects a random number
-        while(newNum === this.state.index || randNums.some(num => num === newNum) || newNum > words.length-1){ //Change newNum until it is no longer the same as the index or is in randNums already
+      while(typeof(randNums[i]) !=='number' || examples[randNums[i]].length < 2){  //Reassign if new elem is not a number
+        while((newNum === this.state.index || randNums.some(num => num === newNum) || newNum > words.length-1)){ //Change newNum until it is no longer the same as the index or is in randNums already
           newNum = Math.floor(Math.random()*(words.length));
         }
         randNums[i] = newNum;
-        while(typeof(randNums[i]) !=='number'){  //Reassign if new elem is not a number
-          while(newNum === this.state.index || randNums.some(num => num === newNum) || newNum > words.length-1){ //Change newNum until it is no longer the same as the index or is in randNums already
-            newNum = Math.floor(Math.random()*(words.length));
-          }
-          randNums[i] = newNum;
         }
       }
       randNums[Math.floor(Math.random()*4)] = this.state.index; //Assign index to random element in randNums
@@ -781,7 +781,7 @@ class App extends Component {
   }
    next= () => {
       let randomIndex = Math.floor(Math.random()*(words.length-1));  //Pick a random index
-      while(usedNums.some(num => num === randomIndex) && usedNums.length !== words.length){   //If it was already used and not all the words were used yet, reselect
+      while(usedNums.some(num => num === randomIndex) && usedNums.length !== words.length && !usedNums.includes(randomIndex)){   //If it was already used and not all the words were used yet, reselect
         randomIndex = Math.floor(Math.random()*(words.length-1));
       }
       
