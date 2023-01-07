@@ -861,7 +861,7 @@ class App extends Component {
             <button class="btn" onClick={this.defineWord}  style={{display: this.state.showNotUnderstandButton2 ? 'block': 'none'}}>Unknown</button>
           </div>
         <div style={{display: this.state.showNext ? 'block': 'none' }} id='nextBtn'>
-          <button style={{width:"250px"}} onClick={this.next}>Next</button>
+          <button style={{width:"100px"}} onClick={this.next}>Next</button>
         </div>
         
       </header>
