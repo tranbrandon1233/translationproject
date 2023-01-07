@@ -40,13 +40,19 @@ code {
 
 .word{
   font-size: xx-large;
+  color: rgb(128,128,255);
 }
 
-.test input{  
+.type{
+  color: rgb(255,135,15);
+}
+
+.radio{  
   content: '';
   border-radius: 50%;
   border: 1px solid rgb(0, 0, 0);
   background-color: #282c34;
+  padding-left: 100px;
 }
 
 /* END CHECKBOX STYLE */

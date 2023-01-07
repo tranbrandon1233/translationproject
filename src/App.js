@@ -677,6 +677,7 @@ class App extends Component {
       this.setState({showCorrect: true});
       this.setState({showNext: true});
       this.setState({showDef: false});
+      this.setState({showWrong: false})
       this.setState({showNotUnderstandButton: false});
       this.setState({showTest: false}); 
       this.setState({showNotUnderstandButton2: false});
@@ -749,6 +750,12 @@ class App extends Component {
           newNum = Math.floor(Math.random()*(words.length));
         }
         randNums[i] = newNum;
+        while(typeof(randNums[i]) !=='number'){  //Reassign if new elem is not a number
+          while(newNum === this.state.index || randNums.some(num => num === newNum) || newNum > words.length-1){ //Change newNum until it is no longer the same as the index or is in randNums already
+            newNum = Math.floor(Math.random()*(words.length));
+          }
+          randNums[i] = newNum;
+        }
       }
       randNums[Math.floor(Math.random()*4)] = this.state.index; //Assign index to random element in randNums
 }
@@ -769,6 +776,7 @@ class App extends Component {
     this.setState({showNotUnderstandButton: false});
     this.setState({showUnderstandButton: false});
     this.setState({showNotUnderstandButton2: true});
+    //words[this.state.index] = randNums[0] + " " + randNums[1] + " "+ randNums[2] + " "+ randNums[3] + " ";
     
   }
    next= () => {
@@ -816,7 +824,7 @@ class App extends Component {
         </div>
           <div style={{display: this.state.showWords ? 'block': 'none' }}>
             <br/><t class="word" style={{fontSize:"30pt"}}>{words[this.state.index]}</t><br/>
-            <t>{type[this.state.index]}</t>
+            <t class="type">{type[this.state.index]}</t>
           </div>
           <br/>
           <div class='btnContainer'>
@@ -839,10 +847,10 @@ class App extends Component {
         </div>
         <div style={{display: this.state.showTest ? 'block': 'none', textAlign:'left' }}>
           <t style={{color:"blanchedalmond"}}><b>Synonym:</b></t><br/><br/>
-          <label class="test" className={randNums[0]} onClick={this.handleOptionChange} ><input class="test" type="radio" value ={randNums[0]} checked={this.state.selectedOption === randNums[0]} onChange={this.handleOptionChange} />&nbsp;&nbsp;&nbsp;&nbsp;{syn[randNums[0]]}</label><br/>
-          <input class="test" type="radio"  value ={randNums[1]} checked={this.state.selectedOption === randNums[1]}   onChange={this.handleOptionChange}/><label className={randNums[1]} onClick={this.handleOptionChange} >&nbsp;&nbsp;&nbsp;&nbsp;{syn[randNums[1]]}</label><br/>
-          <input class="test"  type="radio" value = {randNums[2]} checked={this.state.selectedOption === randNums[2]}  onChange={this.handleOptionChange}/><label className={randNums[2]} onClick={this.handleOptionChange} >&nbsp;&nbsp;&nbsp;&nbsp;{syn[randNums[2]]}</label><br/>
-          <label className={randNums[3]} onClick={this.handleOptionChange} ><input class="test" type="radio"  value ={randNums[3]} checked={this.state.selectedOption === randNums[3]}  onChange={this.handleOptionChange}/>&nbsp;&nbsp;&nbsp;&nbsp;{syn[randNums[3]]}</label><br/>
+          <label class="radio" className={randNums[0]} onClick={this.handleOptionChange} ><input class="radio" name="radio" type="radio" value ={randNums[0]} checked={this.state.selectedOption === randNums[0]} onChange={this.handleOptionChange} /><span>&nbsp;&nbsp;&nbsp;&nbsp;{syn[randNums[0]]}</span></label><br/>
+          <label className={randNums[1]} onClick={this.handleOptionChange} ><input class="radio" name="radio" type="radio"  value ={randNums[1]} checked={this.state.selectedOption === randNums[1]}   onChange={this.handleOptionChange}/><span>&nbsp;&nbsp;&nbsp;&nbsp;{syn[randNums[1]]}</span></label><br/>
+          <input class="radio"  type="radio" value = {randNums[2]} checked={this.state.selectedOption === randNums[2]}  onChange={this.handleOptionChange}/><label className={randNums[2]} onClick={this.handleOptionChange} >&nbsp;&nbsp;&nbsp;&nbsp;{syn[randNums[2]]}</label><br/>
+          <label className={randNums[3]} onClick={this.handleOptionChange} ><input class="test" type="radio"  value ={randNums[3]} checked={this.state.selectedOption === randNums[3]}  onChange={this.handleOptionChange}/><span>&nbsp;&nbsp;&nbsp;&nbsp;{syn[randNums[3]]}</span></label><br/>
           <br/>
         </div>
         <div class='btnContainer' id='notUnderstandBtn2'>
@@ -850,7 +858,7 @@ class App extends Component {
             <button class="btn" onClick={this.defineWord}  style={{display: this.state.showNotUnderstandButton2 ? 'block': 'none'}}>Unknown</button>
           </div>
         <div style={{display: this.state.showNext ? 'block': 'none' }} id='nextBtn'>
-          <button onClick={this.next}>Next</button>
+          <button style={{width:"250px"}} onClick={this.next}>Next</button>
         </div>
         
       </header>
