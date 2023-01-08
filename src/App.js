@@ -869,28 +869,28 @@ class App extends Component {
           <button style={{width:"100px"}} onClick={this.next}>Next</button>
         </div>
         <div style={{lineHeight:"0", height:"0", clear:"both", position:"absolute", display:"inline-block", padding:"0px", margin:"0px", opacity:0.4, userSelect:"none", rotate:"-45deg"}}>
-        <span id="span1" style={{position:"absolute", display:"inline-block", fontSize:"20", color:"white",top:-200, left:350,  padding:"0px", margin:"0px", opacity:0.4}}>FastWayEDU</span
-        ><span id="span1" style={{position:"absolute", display:"inline-block", fontSize:"20", color:"white",top:-400, left:150,  padding:"0px", margin:"0px", opacity:0.4}}>FastWayEDU</span
-        ><span id="span1" style={{position:"absolute", display:"inline-block", fontSize:"20", color:"white",top:0, left:550,  padding:"0px", margin:"0px", opacity:0.4}}>FastWayEDU</span
-        ><span id="span1" style={{position:"absolute", display:"inline-block", fontSize:"20", color:"white",top:-400, left:-50,  padding:"0px", margin:"0px", opacity:0.4}}>FastWayEDU</span
-        ><span id="span1" style={{position:"absolute", display:"inline-block", fontSize:"20", color:"white",top:-200, left:150,  padding:"0px", margin:"0px", opacity:0.4}}>FastWayEDU</span
-        ><span id="span1" style={{position:"absolute", display:"inline-block", fontSize:"20", color:"white",top:0, left:350,  padding:"0px", margin:"0px", opacity:0.4}}>FastWayEDU</span
-        ><span id="span1" style={{position:"absolute", display:"inline-block", fontSize:"20", color:"white",top:200, left:550,  padding:"0px", margin:"0px", opacity:0.4}}>FastWayEDU</span
-        ><span id="span1" style={{position:"absolute", display:"inline-block", fontSize:"20", color:"white", padding:"0px", margin:"0px", opacity:0.4, top:200, left:300}}>FastWayEDU</span
-        ><span id="span1" style={{position:"absolute", display:"inline-block", fontSize:"20", color:"white", padding:"0px", margin:"0px", opacity:0.4, top:0, left:100}}>FastWayEDU</span
-        ><span id="span1" style={{position:"absolute", display:"inline-block", fontSize:"20", color:"white", padding:"0px", margin:"0px", opacity:0.4, top:-200, left:-100}}>FastWayEDU</span
-        ><span id="span1" style={{position:"absolute", display:"inline-block", fontSize:"20", color:"white", padding:"0px", margin:"0px", opacity:0.4, top:-400, left:-300}}>FastWayEDU</span
-        ><span id="span1" style={{position:"absolute", display:"inline-block", fontSize:"20", color:"white", padding:"0px", margin:"0px", opacity:0.4, top:-200, left:-350}}>FastWayEDU</span
-        ><span id="span1" style={{position:"absolute", display:"inline-block", fontSize:"20", color:"white", padding:"0px", margin:"0px", opacity:0.4, top: 0, left:-150}}>FastWayEDU</span
-        ><span id="span1" style={{position:"absolute", display:"inline-block", fontSize:"20", color:"white", padding:"0px", margin:"0px", opacity:0.4, top: 200, left:50}}>FastWayEDU</span
-        ><span id="span1" style={{position:"absolute", display:"inline-block", fontSize:"20", color:"white", padding:"0px", margin:"0px", opacity:0.4, top: 400, left:250}}>FastWayEDU</span
-        ><span id="span1" style={{position:"absolute", display:"inline-block", fontSize:"20", color:"white", padding:"0px", margin:"0px", opacity:0.4, top:-600, left:-300}}>FastWayEDU</span
-        ><span id="span1" style={{position:"absolute", display:"inline-block", fontSize:"20", color:"white", padding:"0px", margin:"0px", opacity:0.4, top:-750, left:-150}}>FastWayEDU</span
-        ><span id="span1" style={{position:"absolute", display:"inline-block", fontSize:"20", color:"white", padding:"0px", margin:"0px", opacity:0.4, top:-200, left:-600}}>FastWayEDU</span
-        ><span id="span1" style={{position:"absolute", display:"inline-block", fontSize:"20", color:"white", padding:"0px", margin:"0px", opacity:0.4, top:0, left:-400}}>FastWayEDU</span
-        ><span id="span1" style={{position:"absolute", display:"inline-block", fontSize:"20", color:"white", padding:"0px", margin:"0px", opacity:0.4, top:200, left:-200}}>FastWayEDU</span
-        ><span id="span1" style={{position:"absolute", display:"inline-block", fontSize:"20", color:"white", padding:"0px", margin:"0px", opacity:0.4, top:400, left:0}}>FastWayEDU</span
-        ><span id="span1" style={{position:"absolute", display:"inline-block", fontSize:"20", color:"white", padding:"0px", margin:"0px", opacity:0.4, top:-400, left:-550}}>FastWayEDU</span>
+        <span id="span1" style={{position:"absolute", display:"inline-block",  color:"white",top:-200, left:350,  padding:"0px", margin:"0px", opacity:0.4}}>FastWayEDU</span
+        ><span id="span1" style={{position:"absolute", display:"inline-block",  color:"white",top:-400, left:150,  padding:"0px", margin:"0px", opacity:0.4}}>FastWayEDU</span
+        ><span id="span1" style={{position:"absolute", display:"inline-block",  color:"white",top:0, left:550,  padding:"0px", margin:"0px", opacity:0.4}}>FastWayEDU</span
+        ><span id="span1" style={{position:"absolute", display:"inline-block",  color:"white",top:-400, left:-50,  padding:"0px", margin:"0px", opacity:0.4}}>FastWayEDU</span
+        ><span id="span1" style={{position:"absolute", display:"inline-block",  color:"white",top:-200, left:150,  padding:"0px", margin:"0px", opacity:0.4}}>FastWayEDU</span
+        ><span id="span1" style={{position:"absolute", display:"inline-block",  color:"white",top:0, left:350,  padding:"0px", margin:"0px", opacity:0.4}}>FastWayEDU</span
+        ><span id="span1" style={{position:"absolute", display:"inline-block",  color:"white",top:200, left:550,  padding:"0px", margin:"0px", opacity:0.4}}>FastWayEDU</span
+        ><span id="span1" style={{position:"absolute", display:"inline-block",  color:"white", padding:"0px", margin:"0px", opacity:0.4, top:200, left:300}}>FastWayEDU</span
+        ><span id="span1" style={{position:"absolute", display:"inline-block",  color:"white", padding:"0px", margin:"0px", opacity:0.4, top:0, left:100}}>FastWayEDU</span
+        ><span id="span1" style={{position:"absolute", display:"inline-block",  color:"white", padding:"0px", margin:"0px", opacity:0.4, top:-200, left:-100}}>FastWayEDU</span
+        ><span id="span1" style={{position:"absolute", display:"inline-block",  color:"white", padding:"0px", margin:"0px", opacity:0.4, top:-400, left:-300}}>FastWayEDU</span
+        ><span id="span1" style={{position:"absolute", display:"inline-block",  color:"white", padding:"0px", margin:"0px", opacity:0.4, top:-200, left:-350}}>FastWayEDU</span
+        ><span id="span1" style={{position:"absolute", display:"inline-block",  color:"white", padding:"0px", margin:"0px", opacity:0.4, top: 0, left:-150}}>FastWayEDU</span
+        ><span id="span1" style={{position:"absolute", display:"inline-block",  color:"white", padding:"0px", margin:"0px", opacity:0.4, top: 200, left:50}}>FastWayEDU</span
+        ><span id="span1" style={{position:"absolute", display:"inline-block",  color:"white", padding:"0px", margin:"0px", opacity:0.4, top: 400, left:250}}>FastWayEDU</span
+        ><span id="span1" style={{position:"absolute", display:"inline-block",  color:"white", padding:"0px", margin:"0px", opacity:0.4, top:-600, left:-300}}>FastWayEDU</span
+        ><span id="span1" style={{position:"absolute", display:"inline-block",  color:"white", padding:"0px", margin:"0px", opacity:0.4, top:-750, left:-150}}>FastWayEDU</span
+        ><span id="span1" style={{position:"absolute", display:"inline-block",  color:"white", padding:"0px", margin:"0px", opacity:0.4, top:-200, left:-600}}>FastWayEDU</span
+        ><span id="span1" style={{position:"absolute", display:"inline-block",  color:"white", padding:"0px", margin:"0px", opacity:0.4, top:0, left:-400}}>FastWayEDU</span
+        ><span id="span1" style={{position:"absolute", display:"inline-block",  color:"white", padding:"0px", margin:"0px", opacity:0.4, top:200, left:-200}}>FastWayEDU</span
+        ><span id="span1" style={{position:"absolute", display:"inline-block",  color:"white", padding:"0px", margin:"0px", opacity:0.4, top:400, left:0}}>FastWayEDU</span
+        ><span id="span1" style={{position:"absolute", display:"inline-block",  color:"white", padding:"0px", margin:"0px", opacity:0.4, top:-400, left:-550}}>FastWayEDU</span>
 
       </div>
       </header>
