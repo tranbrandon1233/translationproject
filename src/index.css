@@ -5,12 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding:0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
 
 .btn{
   width: 100px;
@@ -28,14 +25,7 @@ code {
   column-gap: 2rem;
 }
 
-.watermark
-{
- rotate: -45deg;
- opacity:0.08;
- top: auto;
- left: 80%;
-  color:white;
-}
+
 
 .wrongAns{
   background-color: red;
@@ -55,22 +45,6 @@ code {
 }
 
 
-
-@media (min-width: 1100px) {
-
-  }
-
-@media (max-width: 1100px) {
-  h1:after {
-    content: 'Medium screen';
-  }
-}
-@media (max-width: 480px) {
-  h1:after {
-    content: 'Small screen';
-  }
-}
-/* END CHECKBOX STYLE */
 
 
 
