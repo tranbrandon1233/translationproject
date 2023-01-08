@@ -733,13 +733,16 @@ class App extends Component {
 
     switch(words[this.state.index]){  //Exceptions for irregular verbs
       case "become":
-        indexPlusExtra = examples[this.state.index].search("became")
+        indexPlusExtra = examples[this.state.index].search("became")+6;
+        insertIndex = examples[this.state.index].search("became");
         break;
       case "browse":
-        indexPlusExtra = examples[this.state.index].search("browsing")
+        indexPlusExtra = examples[this.state.index].search("browsing")+8;
+        insertIndex= examples[this.state.index].search("browsing");
         break;
       case "forget":
-        indexPlusExtra = examples[this.state.index].search("forgotten")
+        indexPlusExtra = examples[this.state.index].search("forgotten")+9;
+        insertIndex = examples[this.state.index].search("forgotten")
           break;
       default:
         break;
